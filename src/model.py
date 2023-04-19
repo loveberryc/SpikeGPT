@@ -445,4 +445,4 @@ class GPT(nn.Module):
         if targets is not None:
             loss = F.cross_entropy(x.view(-1, x.size(-1)), targets.to(x.device).view(-1))
 
-        return L2Wrap.apply(loss, x)
+        return L2Wrap.apply(loss, x).clone()
